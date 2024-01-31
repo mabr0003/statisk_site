@@ -1,0 +1,103 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+main {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: auto;
+}
+
+body {
+  background-color: beige;
+}
+
+h1 {
+  text-align: center;
+}
+
+/*------- CATEGORY -------*/
+
+.brand {
+  background-color: rgb(191, 188, 188);
+  text-align: center;
+  padding: 3rem;
+}
+
+.brand:hover {
+  background-color: grey;
+}
+
+/*----- PRODUCT LIST -----*/
+
+.product_card > div {
+  font-size: 20px;
+}
+
+.subtle {
+  opacity: 30%;
+}
+
+.sold_out img {
+  opacity: 40%;
+}
+
+.sold_out::before {
+  content: "Sold out";
+  position: absolute;
+  margin-top: 5rem;
+  margin-left: 2rem;
+  font-size: 30px;
+  background-color: grey;
+  padding: 1rem;
+  rotate: 30deg;
+  z-index: 1000;
+}
+
+.on_sale::before {
+  content: "On sale";
+  position: absolute;
+  margin-top: 5rem;
+  margin-left: 2rem;
+  font-size: 30px;
+  background-color: red;
+  padding: 1rem;
+  rotate: 30deg;
+  z-index: 1000;
+}
+
+.discount {
+  display: flex;
+  justify-content: space-between;
+}
+
+.product_card > a {
+  font-size: 20px;
+}
+
+.discount > div:last-child {
+  background-color: red;
+  padding: 0.2rem;
+}
+
+/*----- PRODUCT ----*/
+
+.product h1 {
+  text-align: start;
+}
+
+.product {
+  font-size: 30px;
+}
+
+.product > div.price {
+  margin-top: 3rem;
+}
