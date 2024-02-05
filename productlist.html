@@ -22,9 +22,8 @@
     </header>
     <main>
         <h1>NIKE</h1>
-
-        <article class="grid_1-1-1">
-            <article class="product_card sold_out">
+        <article id="productlist" class="grid_1-1-1">
+            <!-- <article class="product_card sold_out">
                 <img src="https://kea-alt-del.dk/t7/images/webp/640/1163.webp" alt="nike">
                 <h2>Sahara Team India Fanwear Round Neck Jersey</h2>
                 <div class="subtle">NIKE | T-shirts</div>
@@ -41,18 +40,27 @@
                     <div>-50%</div>
                 </div>
                 <a href="product.html">Read more</a>
-            </article>
-            <article class="product_card">
-                <img src="https://kea-alt-del.dk/t7/images/webp/640/1163.webp" alt="nike">
-                <h2>Sahara Team India Fanwear Round Neck Jersey</h2>
-                <div class="subtle">NIKE | T-shirts</div>
-                <div class="price">DKK 895,-</div>
-                <a href="product.html">Read more</a>
-            </article>
-
+            </article> -->
         </article>
     </main>
 
+    <template id="product_card_template">
+        <article class="product_card">
+            <img src="https://kea-alt-del.dk/t7/images/webp/640/1163.webp" alt="nike">
+            <h2>Sahara Team India Fanwear Round Neck Jersey</h2>
+            <div class="subtle"> <span class="brandname">NIKE</span> | <span class="articletype">T-shirts</span></div>
+            <div class="price_discount">
+                <div class="price">DKK 895,-</div>
+                <div class="discount"></div>
+            </div>
+            <a class="read_more" href="product.html">Read more</a>
+
+        </article>
+    </template>
+
+
+
+    <script src="productlist.js"></script>
 </body>
 
 </html>
