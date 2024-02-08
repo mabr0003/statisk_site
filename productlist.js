@@ -1,4 +1,7 @@
-fetch("https://kea-alt-del.dk/t7/api/products")
+const urlParams = new URLSearchParams(window.location.search);
+const brandname = urlParams.get("brandname");
+
+fetch("https://kea-alt-del.dk/t7/api/products?brandname=" + brandname)
   .then((response) => response.json())
   .then(dataReceived);
 
@@ -17,11 +20,13 @@ function showProduct(product) {
   clone.querySelector(".price").textContent = "DKK " + product.price + ",-";
   clone.querySelector("img").src = "https://kea-alt-del.dk/t7/images/webp/640/" + product.id + ".webp";
 
+  document.querySelector("h1").textContent = product.brandname;
+
   if (product.soldout) {
     clone.querySelector(".product_card").classList.add("sold_out");
   }
 
-  if (product.discount >= 1) {
+  if (product.discount) {
     clone.querySelector(".product_card").classList.add("on_sale");
   }
 
@@ -30,14 +35,11 @@ function showProduct(product) {
   }
 
   if (clone.querySelector(".product_card").classList.contains("on_sale")) {
+    clone.querySelector(".discount").style.display = "block";
     clone.querySelector(".discount").textContent = "-" + product.discount + "%";
   }
 
-  if (clone.querySelector(".product_card").classList.contains("on_sale")) {
-    clone.querySelector(".discount").style.display = "block";
-  }
-
-  clone.querySelector(".read_more").setAttribute("href", "product.html?id=" + product.id);
+  clone.querySelector(".read_more").setAttribute("href", `product.html?id=${product.id}`);
 
   const parent = document.querySelector("#productlist");
   parent.appendChild(clone);

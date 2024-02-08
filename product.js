@@ -18,7 +18,7 @@ function showProduct(product) {
     document.querySelector(".product_img").classList.add("sold_out");
   }
 
-  if (product.discount >= 1) {
+  if (product.discount) {
     document.querySelector(".product_img").classList.add("on_sale");
   }
 
@@ -27,10 +27,7 @@ function showProduct(product) {
   }
 
   if (document.querySelector(".product_img").classList.contains("on_sale")) {
-    document.querySelector(".discount").textContent = "-" + product.discount + "%";
-  }
-
-  if (document.querySelector(".product_img").classList.contains("on_sale")) {
     document.querySelector(".discount").style.display = "block";
+    document.querySelector(".discount").textContent = "-" + product.discount + "%";
   }
 }
